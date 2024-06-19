@@ -1,14 +1,23 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-
-// import org.junit.jupiter.api.Test;
+import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
 
-  // @Test
-  // void addition() {
-  //     assertEquals(2, 1 + 1);
-  // }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj szerokość prostokąta:");
+        int width = scanner.nextInt();
+
+        System.out.println("Podaj wysokość prostokąta:");
+        int height = scanner.nextInt();
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
 }
