@@ -1,25 +1,29 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main
+    
+{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Podaj szerokość prostokąta:");
-        int width = scanner.nextInt();
-
-        System.out.println("Podaj wysokość prostokąta:");
+        System.out.println("Podaj wysokość trójkąta:");
         int height = scanner.nextInt();
 
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+        for (int i = 1; i <= height; i++) {
+            // Drukujemy spacje, aby wyrównać trójkąt po prawej stronie
+            for (int j = 1; j <= height - i; j++) {
+                System.out.print(" ");
+            }
+            // Drukujemy gwiazdki i puste miejsca wewnątrz trójkąta
+            for (int j = 1; j <= i; j++) {
+                if (j == 1 || j == i || i == height) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
                 }
             }
-            System.out.println();
+            System.out.println(); // Nowa linia po każdej iteracji zewnętrznej pętli
         }
 
         scanner.close();
